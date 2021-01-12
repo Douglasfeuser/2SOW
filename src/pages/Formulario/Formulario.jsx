@@ -1,21 +1,21 @@
 import React from 'react';
-import './Home.css';
 import {
   Container
 } from 'semantic-ui-react'
 import MenuNav from 'components/UI/Menu/Menu';
 
-const PagesHome = () => {
+const PagesFormulario = () => {
+  
   return (
     <>
       <MenuNav></MenuNav>
       <Container text style={{ marginTop: '7em' }}>
-        <div className="pages-home">
-          Listagem
+        <div>
+          FORMULARIOS
         </div>
       </Container>
     </>
   );
 };
 
-export default PagesHome;
+export default PagesFormulario;
