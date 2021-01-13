@@ -15,7 +15,7 @@ function login({ user, password }) {
     return msg;
   }
 
-  if (user === 'admin' && password === 'admin') {
+  if (user === 'admin@tmail.com' && password === 'admin') {
     return { token: '1234' };
   }
 
