@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import StoreContext from 'components/Store/Context';
-import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react';
+import { Button, Form, Grid, Header, Segment, Message} from 'semantic-ui-react';
 
 import './Login.css';
 
@@ -66,13 +66,13 @@ const UserLogin = () => {
 
   return (
     <><Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
-      <Grid.Column style={{ maxWidth: 450 }}>
+      <Grid.Column style={{ maxWidth: 470 }}>
         <Header as='h1' color='teal' textAlign='center' className="user-login__title">
           Login
         </Header>
         <Form size='large' onSubmit={onSubmit}>
           <Segment stacked>
-            <Form.Input fluid 
+            <Form.Input fluid
               id="user"
               type="email"
               name="user" 
@@ -82,7 +82,7 @@ const UserLogin = () => {
               onChange={onChange} 
               value={values.user}/>
             <Form.Input
-              fluid
+              fluid              
               id="password"
               type="password"
               name="password"
@@ -97,7 +97,7 @@ const UserLogin = () => {
             </Button>
           </Segment>
           {error && (
-            <div className="user-login__error">{error}</div>
+            <Message>{error}</Message>
           )}
         </Form>
       </Grid.Column>

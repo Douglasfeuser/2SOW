@@ -4,13 +4,17 @@ import React from 'react'
 import { Table, Icon, Button } from 'semantic-ui-react'
 
 const tableData = [
-  { name: 'John', cpf: 895512, email: 't@tz.com', cidade: 'Criciuma' },
-  { name: 'Andre', cpf: 295512, email: 't@tz.com', cidade: 'Floripa' },
-  { name: 'Thalles', cpf: 195512, email: 'Abc@tz.com', cidade: 'Rincão' },
-  { name: 'Amber', cpf: 874950, email: 't1111@t.com', cidade: 'São paulo' }
+  { id: 1, name: 'John', cpf: 895512, email: 't@tz.com', cidade: 'Criciuma' },
+  { id: 2, name: 'Andre', cpf: 295512, email: 't@tz.com', cidade: 'Floripa' },
+  { id: 3, name: 'Thalles', cpf: 195512, email: 'Abc@tz.com', cidade: 'Rincão' },
+  { id: 4, name: 'Amber', cpf: 874950, email: 't1111@t.com', cidade: 'São paulo' }
 ]
 
-function exampleReducer(state, action) {
+function deleteUser(id) {
+    console.log(id);
+}
+
+function sortReducer(state, action) {
   switch (action.type) {
     case 'CHANGE_SORT':
       if (state.column === action.column) {
@@ -33,7 +37,7 @@ function exampleReducer(state, action) {
 }
 
 function TableList() {
-  const [state, dispatch] = React.useReducer(exampleReducer, {
+  const [state, dispatch] = React.useReducer(sortReducer, {
     column: null,
     data: tableData,
     direction: null,
@@ -68,17 +72,32 @@ function TableList() {
           >
             Cidade
           </Table.HeaderCell>
-        <Table.HeaderCell>Ações</Table.HeaderCell>
+        <Table.HeaderCell textAlign='center'>Ações</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
       <Table.Body>
-        {data.map(({ cpf, email, name, cidade }) => (
+        {data.map(({ id, cpf, email, name, cidade }) => (
           <Table.Row key={name}>
             <Table.Cell>{name}</Table.Cell>
             <Table.Cell>{cpf}</Table.Cell>
             <Table.Cell>{email}</Table.Cell>
             <Table.Cell>{cidade}</Table.Cell>
-            <Table.Cell> Edit || Del </Table.Cell>
+            <Table.Cell textAlign='center'> 
+                <Button
+                    href={'/edit/' + id}
+                    icon
+                    color='orange'
+                    size='small' >
+                    <Icon name='edit'/>
+                </Button>
+                <Button
+                    onClick={() => deleteUser(id)}
+                    icon
+                    color='red'
+                    size='small'>
+                    <Icon name='trash alternate'/>
+                </Button>
+                </Table.Cell>
           </Table.Row>
         ))}
       </Table.Body>
@@ -94,7 +113,7 @@ function TableList() {
                     primary
                     size='small'
                 >
-                    <Icon name='user' /> Inserir usuário
+                    <Icon name='plus circle' /> Inserir usuário
                 </Button>
                 </Table.HeaderCell>
             </Table.Row>
