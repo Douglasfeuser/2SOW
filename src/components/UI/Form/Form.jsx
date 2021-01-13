@@ -2,8 +2,7 @@ import React, { Fragment } from "react";
 import { Field, reduxForm } from "redux-form";
 import { Form } from "semantic-ui-react";
 
-
-const ProfileForm = props => {
+const UserForm = props => {
   const { handleSubmit, reset } = props;
 
   return (
@@ -61,7 +60,7 @@ const ProfileForm = props => {
           <Field
             component={Form.Input}
             label="Bairro"
-            name="endereco.nairro"
+            name="endereco.bairro"
             placeholder="Bairro"
           />
           <Field
@@ -82,5 +81,5 @@ const ProfileForm = props => {
 };
 
 export default reduxForm({
-  form: "profile"
-})(ProfileForm);
+  form: "user"
+})(UserForm);
