@@ -53,6 +53,7 @@ const UserForm = props => {
         </Form.Group>
 
         <Field
+        required
         component={Form.Input}
         label="CEP"
         name="endereco.cep"
@@ -63,12 +64,14 @@ const UserForm = props => {
 
         <Form.Group widths="equal">
           <Field
+            required
             component={Form.Input}
             label="Rua"
             name="endereco.rua"
             placeholder="Rua"
           />
           <Field
+            required
             component={Form.Input}
             label="Número"
             name="endereco.numero"
@@ -78,12 +81,14 @@ const UserForm = props => {
 
         <Form.Group widths="equal">
           <Field
+            required
             component={Form.Input}
             label="Bairro"
             name="endereco.bairro"
             placeholder="Bairro"
           />
           <Field
+            required
             component={Form.Input}
             label="Cidade"
             name="endereco.cidade"

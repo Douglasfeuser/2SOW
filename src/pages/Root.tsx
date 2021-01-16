@@ -4,8 +4,8 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import StoreProvider from 'components/Store/Provider';
-import RoutesPrivate from 'components/Routes/Private/Private';
+import StoreProvider from '../components/Store/Provider';
+import RoutesPrivate from '../components/Routes/Private/Private';
 import Home from './Home/Home';
 import Formulario from './Formulario/Formulario';
 import Login from './Login/Login';

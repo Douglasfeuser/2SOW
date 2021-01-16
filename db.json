@@ -1,5 +1,7 @@
 {
-  "usuarios": [{
+  "usuarios": [
+    {
+      "id": 1,
       "nome": "douglas",
       "cpf": "088.122.840-45",
       "email": "teste@tmail.com",
@@ -9,6 +11,19 @@
           "numero": 785,
           "bairro": "bairro azul",
           "cidade": "cidade eterna"
+      }},
+      {
+      "id": 2,
+      "nome": "teste",
+      "cpf": "088.122.840-45",
+      "email": "teste@tmail.com",
+      "endereco": {
+          "cep": 13454000,
+          "rua": "rua talvez",
+          "numero": 785,
+          "bairro": "bairro azul",
+          "cidade": "cidade azul"
       }
-  }]
+    }
+  ]
 }

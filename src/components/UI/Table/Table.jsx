@@ -3,12 +3,14 @@ import _ from 'lodash'
 import React from 'react'
 import { Table, Icon, Button } from 'semantic-ui-react'
 
-const tableData = [
-  { id: 1, name: 'John', cpf: 895512, email: 't@tz.com', cidade: 'Criciuma' },
-  { id: 2, name: 'Andre', cpf: 295512, email: 't@tz.com', cidade: 'Floripa' },
-  { id: 3, name: 'Thalles', cpf: 195512, email: 'Abc@tz.com', cidade: 'Rincão' },
-  { id: 4, name: 'Amber', cpf: 874950, email: 't1111@t.com', cidade: 'São paulo' }
-]
+let tableData = [];
+
+fetch(`http://localhost:5000/usuarios`)
+      .then((res) => res.json())
+      .then(async (data) => {
+        console.log('teste');
+        tableData = await data;
+    })
 
 function deleteUser(id) {
     console.log(id);
@@ -49,8 +51,8 @@ function TableList() {
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell
-            sorted={column === 'name' ? direction : null}
-            onClick={() => dispatch({ type: 'CHANGE_SORT', column: 'name' })}
+            sorted={column === 'nome' ? direction : null}
+            onClick={() => dispatch({ type: 'CHANGE_SORT', column: 'nome' })}
           >
             Nome
           </Table.HeaderCell>
@@ -76,9 +78,9 @@ function TableList() {
         </Table.Row>
       </Table.Header>
       <Table.Body>
-        {data.map(({ id, cpf, email, name, cidade }) => (
-          <Table.Row key={name}>
-            <Table.Cell>{name}</Table.Cell>
+        {data.map(({ id, cpf, email, nome, cidade }) => (
+          <Table.Row key={nome}>
+            <Table.Cell>{nome}</Table.Cell>
             <Table.Cell>{cpf}</Table.Cell>
             <Table.Cell>{email}</Table.Cell>
             <Table.Cell>{cidade}</Table.Cell>

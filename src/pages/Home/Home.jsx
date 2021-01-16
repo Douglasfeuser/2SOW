@@ -5,8 +5,14 @@ import {
 } from 'semantic-ui-react'
 import MenuNav from 'components/UI/Menu/Menu';
 import TableList from 'components/UI/Table/Table';
+import { QueryClient, QueryClientProvider } from "react-query";
+import { UserList } from "components/UI/List/UserList";
+
+const { users } = {};
+const queryClient = new QueryClient();
 
 const PagesHome = () => {
+
   return (
     <>
       <MenuNav></MenuNav>
@@ -14,7 +20,10 @@ const PagesHome = () => {
           <h1>
           Listagem usuários
           </h1>
-        <TableList></TableList>
+          <QueryClientProvider client={queryClient}>
+            <UserList />
+          </QueryClientProvider>
+        <TableList list={users}></TableList>
       </Container>
     </>
   );
