@@ -3,12 +3,12 @@ export interface Pagination {
     page: number;
   }
   
-  export interface Users {
+  export interface User {
     favorite: boolean;
     id: number;
-    make: string;
-    model: string;
-    year: number;
+    nome: string;
+    email: string;
+    cpf: number;
     package: string;
     fuelType: string;
     transmission: string;

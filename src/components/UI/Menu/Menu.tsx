@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import StoreContext from 'components/Store/Context'
+import StoreContext from '../../../components/Store/Context'
 import './Menu.css';
 import {
   Container,
@@ -20,7 +20,7 @@ const MenuNav = () => {
                 <Menu.Item as='a' href="/">Listagem</Menu.Item>
                 <Menu.Item as='a' href="/formulario">Inserir usuário</Menu.Item>
                 <Menu.Item position='right'>
-                  <Button as='a' onClick={() => setToken(null)}>
+                  <Button as='a' onClick={() => setToken()}>
                     LOGOUT
                   </Button>
                 </Menu.Item>

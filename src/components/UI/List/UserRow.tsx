@@ -1,9 +1,9 @@
 import React from "react";
-import { Button, Table } from "semantic-ui-react";
-import { Users } from "../../../interfaces/users";
+import { Table } from "semantic-ui-react";
+import { User } from "../../../interfaces/users";
 
 interface UserRowProps {
-  user: Users;
+  user: User;
 }
 
 export const UserRow: React.FC<UserRowProps> = ({
@@ -11,9 +11,9 @@ export const UserRow: React.FC<UserRowProps> = ({
 }) => (
   <Table.Row>
     <Table.Cell>{user.id}</Table.Cell>
-    <Table.Cell>{user.make}</Table.Cell>
-    <Table.Cell>{user.model}</Table.Cell>
-    <Table.Cell>{user.year}</Table.Cell>
+    <Table.Cell>{user.nome}</Table.Cell>
+    <Table.Cell>{user.email}</Table.Cell>
+    <Table.Cell>{user.cpf}</Table.Cell>
     <Table.Cell>{user.package}</Table.Cell>
     <Table.Cell>{user.fuelType}</Table.Cell>
     <Table.Cell>{user.transmission}</Table.Cell>

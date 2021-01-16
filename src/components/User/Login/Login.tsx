@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import StoreContext from 'components/Store/Context';
+import StoreContext from '../../Store/Context';
 import { Button, Form, Grid, Header, Segment, Message} from 'semantic-ui-react';
 
 import './Login.css';
@@ -10,34 +10,30 @@ function initialState() {
 }
 
 function login({ user, password }) {
-  let msg = valid(user, password);
-  if(!msg.valid){
-    return msg;
+  if (!user) {
+    return { error: 'E-mail não pode ser vazio.', token: null };
+  }
+  if (!password) {
+    return { error: 'Senha não pode ser vazio.', token: null };
+  }
+  if (password.length <= 4) {
+    return { error: 'Senha deve ter mais que 4 caracteres.', token: null };
   }
 
   if (user === 'admin@tmail.com' && password === 'admin') {
-    return { token: '1234' };
+    return { error: '', token: '1234' };
   }
 
-  return { error: 'Usuário ou senha inválido.' };
+  return { error: 'Usuário ou senha inválido.', token: null };
 }
 
 function valid(user, password) {
-  if (!user) {
-    return { valid: false, error: 'E-mail não pode ser vazio.' };
-  }
-  if (!password) {
-    return { valid: false, error: 'Senha não pode ser vazio.' };
-  }
-  if (password.length <= 4) {
-    return { valid: false, error: 'Senha deve ter mais que 4 caracteres.' };
-  }
-  return { valid: true };
+  
 }
 
 const UserLogin = () => {
   const [values, setValues] = useState(initialState);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(String);
   const { setToken } = useContext(StoreContext);
   const history = useHistory();
 
@@ -55,6 +51,8 @@ const UserLogin = () => {
 
     const { token, error } = login(values);
 
+    console.log(token);
+    console.log('testeeeee');
     if (token) {
       setToken(token);
       return history.push('/');

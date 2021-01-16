@@ -3,7 +3,7 @@ import {
   Pagination,
   QueryParam,
   SortField,
-  Users,
+  User,
 } from "../interfaces/users";
 import { useQuery } from "react-query";
 import { useState } from "react";
@@ -14,21 +14,20 @@ const constructQuery = (
   filter: string
 ): string => {
   const params = [];
-  params.push(`_limit=${pagination.limit}`);
-  params.push(`_page=${pagination.page}`);
-  params.push(`q=${encodeURIComponent(filter)}`);
-  params.push(`_sort=${sort.sortColumn}`);
+  // params.push(`_limit=${pagination.limit}`);
+  // params.push(`_page=${pagination.page}`);
+  // params.push(`q=${encodeURIComponent(filter)}`);
+  // params.push(`_sort=${sort.sortColumn}`);
   if (sort.sortOrder) {
-    params.push(`_order=${sort.sortOrder === "ascending" ? "asc" : "desc"}`);
+    // params.push(`_order=${sort.sortOrder === "ascending" ? "asc" : "desc"}`);
   }
 
   return params.join("&");
 };
 
 interface UserListState {
-  Users: any[];
   totalCount: number;
-  users: Users[];
+  users: User[];
 }
 
 export const getUserWithTotalCount: QueryFunction<UserListState> = async ({
@@ -49,18 +48,18 @@ export const getUserWithTotalCount: QueryFunction<UserListState> = async ({
     fetch(`http://localhost:5000/usuarios?${query}`),
   ])
     .then(async (values) => {
-      const totalVehicles = await values[0].json();
-      const vehicles: Users[] = await values[1].json();
+      const totalUsers = await values[0].json();
+      const users: User[] = await values[1].json();
       return {
-        totalCount: totalVehicles.length,
-        vehicles,
+        totalCount: totalUsers.length,
+        users,
       };
     })
     .catch((error) => {
       console.log(`Failed to load data: ${error.message}`);
       return {
         totalCount: 0,
-        vehicles: [],
+        users: [],
       };
     });
 };

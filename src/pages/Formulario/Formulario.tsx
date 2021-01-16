@@ -3,8 +3,8 @@ import {
   Container,
   Message
 } from 'semantic-ui-react'
-import MenuNav from 'components/UI/Menu/Menu';
-import UserForm from 'components/UI/Form/Form';
+import MenuNav from '../../components/UI/Menu/Menu';
+import UserForm from '../../components/UI/Form/Form';
 import { connect } from "react-redux";
 
 const PagesFormulario = props => {

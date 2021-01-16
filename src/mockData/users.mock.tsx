@@ -1,11 +1,11 @@
-import { Users } from "../interfaces/users";
+import { User } from "../interfaces/users";
 
-export const mockBaseUsers: Users[] = [
+export const mockBaseUsers: User[] = [
   {
     id: 3,
-    make: "Mazda",
-    model: "B-Series",
-    year: 1987,
+    nome: "Mazda",
+    email: "B-Series",
+    cpf: 1987,
     package: "SE",
     fuelType: "Diesel",
     transmission: "Manual",

@@ -5,10 +5,10 @@ import { UserPageSizeSelect } from "./UserPageSizeSelect";
 import { UserTableHeader } from "./UserTableHeader";
 import { UserRow } from "./UserRow";
 import { PaginationProps } from "semantic-ui-react/dist/commonjs/addons/Pagination/Pagination";
-import { Users } from "../../../interfaces/Users";
+import { User } from "../../../interfaces/users";
 
 interface UserTableProps {
-  users: Users[];
+  users: User[];
   totalCount: number;
   totalPages: number;
   currentPage: number;

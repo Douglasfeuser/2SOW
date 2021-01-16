@@ -3,12 +3,11 @@ import './Home.css';
 import {
   Container
 } from 'semantic-ui-react'
-import MenuNav from 'components/UI/Menu/Menu';
-import TableList from 'components/UI/Table/Table';
+import MenuNav from '../../components/UI/Menu/Menu';
+import TableList from '../../components/UI/Table/Table';
 import { QueryClient, QueryClientProvider } from "react-query";
-import { UserList } from "components/UI/List/UserList";
+import { UserList } from "../../components/UI/List/UserList";
 
-const { users } = {};
 const queryClient = new QueryClient();
 
 const PagesHome = () => {
@@ -23,7 +22,7 @@ const PagesHome = () => {
           <QueryClientProvider client={queryClient}>
             <UserList />
           </QueryClientProvider>
-        <TableList list={users}></TableList>
+        <TableList></TableList>
       </Container>
     </>
   );

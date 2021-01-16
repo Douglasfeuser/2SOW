@@ -8,7 +8,6 @@ let tableData = [];
 fetch(`http://localhost:5000/usuarios`)
       .then((res) => res.json())
       .then(async (data) => {
-        console.log('teste');
         tableData = await data;
     })
 
