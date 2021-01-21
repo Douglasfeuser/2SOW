@@ -48,7 +48,7 @@ describe("useUsers", () => {
     await waitFor(() => {
       expect(result.current.data).toEqual({
         totalCount: 1,
-        vehicles: mockBaseUsers,
+        users: mockBaseUsers,
       });
     });
   });
@@ -58,7 +58,7 @@ describe("useUsers", () => {
       query: {
         _limit: 10,
         _page: 1,
-        q: "mazda",
+        q: "te",
         _sort: "id",
         _order: "asc",
       },
@@ -66,7 +66,7 @@ describe("useUsers", () => {
 
     fetchMock.mock("http://localhost:5000/usuarios", mockBaseUsers, {
       query: {
-        q: "mazda",
+        q: "tes",
       },
       overwriteRoutes: false,
     });
@@ -76,12 +76,12 @@ describe("useUsers", () => {
     });
 
     const { setFilter } = result.current;
-    setFilter("mazda");
+    setFilter("te");
 
     await waitFor(() => {
       expect(result.current.data).toEqual({
         totalCount: 1,
-        vehicles: mockBaseUsers,
+        users: mockBaseUsers,
       });
     });
   });

@@ -12,7 +12,6 @@ const UserForm = props => {
   const useMountEffect = fun => useEffect(() => {
     if(editMode[2] === 'edit'){
       userService.getById(editMode[3]).then(user => {
-        console.log('teste');
         props.dispatch(change('user', 'nome', user.nome));
         props.dispatch(change('user', 'cpf', user.cpf));
         props.dispatch(change('user', 'email', user.email));

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserFilter renders 1`] = `
+<div>
+  <form
+    class="ui form"
+  >
+    <div
+      class="fields"
+    >
+      <div
+        class="field"
+      >
+        <div
+          class="field"
+        >
+          <label>
+            Filter
+          </label>
+          <div
+            class="ui icon input"
+          >
+            <input
+              name="filter"
+              placeholder="Pesquisa."
+              type="text"
+            />
+            <i
+              aria-hidden="true"
+              class="search icon"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;

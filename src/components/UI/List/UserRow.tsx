@@ -2,14 +2,17 @@ import React from "react";
 import { Table, Icon, Button } from 'semantic-ui-react'
 import { User } from "../../../interfaces/users";
 import { userService } from '../../../helpers/user.service';
+import { useHistory } from 'react-router-dom';
 
 interface UserRowProps {
   user: User;
 }
 
+const history = useHistory();
+
 function deleteUser(id) {
   userService.delete(id).then(() => {
-      console.log('delete');
+      history.push('/');
   });
 }
 
