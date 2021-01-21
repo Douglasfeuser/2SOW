@@ -1,10 +1,7 @@
 import React from 'react';
 import './Home.css';
-import {
-  Container
-} from 'semantic-ui-react'
+import { Container, Icon, Button } from 'semantic-ui-react'
 import MenuNav from '../../components/UI/Menu/Menu';
-import TableList from '../../components/UI/Table/Table';
 import { QueryClient, QueryClientProvider } from "react-query";
 import { UserList } from "../../components/UI/List/UserList";
 
@@ -15,14 +12,23 @@ const PagesHome = () => {
   return (
     <>
       <MenuNav></MenuNav>
-      <Container text style={{ marginTop: '6em' }}>
+      <Container style={{ marginTop: '6em' }}>
           <h1>
           Listagem usuários
           </h1>
           <QueryClientProvider client={queryClient}>
             <UserList />
           </QueryClientProvider>
-        <TableList></TableList>
+          <Button
+              href='/formulario'
+              floated='right'
+              icon
+              labelPosition='left'
+              primary
+              size='small'
+          >
+              <Icon name='plus circle' /> Inserir usuário
+          </Button>
       </Container>
     </>
   );

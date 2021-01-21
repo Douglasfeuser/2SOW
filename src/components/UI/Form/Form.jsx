@@ -1,9 +1,31 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Field, reduxForm, change } from "redux-form";
 import { Form } from "semantic-ui-react";
+import { useLocation } from 'react-router-dom';
+import { userService } from '../../../helpers/user.service';
 
 const UserForm = props => {
-  const { handleSubmit, reset, setFieldValue } = props;
+  const { reset, setFieldValue, handleSubmit } = props;
+  const location = useLocation();
+  const editMode = location.pathname.split('/');
+
+  const useMountEffect = fun => useEffect(() => {
+    if(editMode[2] === 'edit'){
+      userService.getById(editMode[3]).then(user => {
+        console.log('teste');
+        props.dispatch(change('user', 'nome', user.nome));
+        props.dispatch(change('user', 'cpf', user.cpf));
+        props.dispatch(change('user', 'email', user.email));
+        props.dispatch(change('user', 'endereco.cep', user.endereco.cep));
+        props.dispatch(change('user', 'endereco.rua', user.endereco.rua));
+        props.dispatch(change('user', 'endereco.numero', user.endereco.numero));
+        props.dispatch(change('user', 'endereco.bairro', user.endereco.bairro));
+        props.dispatch(change('user', 'endereco.cidade', user.endereco.cidade));
+      });
+    }
+  }, []);
+
+  useMountEffect();
 
   function onBlurCep(ev){
 

@@ -27,10 +27,6 @@ function login({ user, password }) {
   return { error: 'Usuário ou senha inválido.', token: null };
 }
 
-function valid(user, password) {
-  
-}
-
 const UserLogin = () => {
   const [values, setValues] = useState(initialState);
   const [error, setError] = useState(String);

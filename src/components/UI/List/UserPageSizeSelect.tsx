@@ -27,7 +27,7 @@ export const UserPageSizeSelect: React.FC<UserPageSizeSelectProps> = ({
   };
   return (
     <React.Fragment>
-      Records per page:{" "}
+      Registros por página:{" "}
       <Dropdown
         inline={true}
         options={limitOptions}

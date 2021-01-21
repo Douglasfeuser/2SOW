@@ -13,13 +13,13 @@ const constructQuery = (
   sort: SortField,
   filter: string
 ): string => {
-  const params = [];
-  // params.push(`_limit=${pagination.limit}`);
-  // params.push(`_page=${pagination.page}`);
-  // params.push(`q=${encodeURIComponent(filter)}`);
-  // params.push(`_sort=${sort.sortColumn}`);
+  const params = [''];
+  params.push(`_limit=${pagination.limit}`);
+  params.push(`_page=${pagination.page}`);
+  params.push(`q=${encodeURIComponent(filter)}`);
+  params.push(`_sort=${sort.sortColumn}`);
   if (sort.sortOrder) {
-    // params.push(`_order=${sort.sortOrder === "ascending" ? "asc" : "desc"}`);
+    params.push(`_order=${sort.sortOrder === "ascending" ? "asc" : "desc"}`);
   }
 
   return params.join("&");

@@ -2,13 +2,15 @@ import { User } from "../interfaces/users";
 
 export const mockBaseUsers: User[] = [
   {
-    id: 3,
-    nome: "Mazda",
-    email: "B-Series",
-    cpf: 1987,
-    package: "SE",
-    fuelType: "Diesel",
-    transmission: "Manual",
-    favorite: false,
-  },
+    id: 1,
+    nome: "douglas",
+    email: "teste@tmail.com",
+    cpf: 088,
+    endereco: {
+        cep: 13454000,
+        rua: "rua talvez",
+        numero: 785,
+        bairro: "bairro azul",
+        cidade: "cidade eterna"
+    }}
 ];

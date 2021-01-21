@@ -4,14 +4,17 @@ export interface Pagination {
   }
   
   export interface User {
-    favorite: boolean;
     id: number;
     nome: string;
     email: string;
     cpf: number;
-    package: string;
-    fuelType: string;
-    transmission: string;
+    endereco: {
+      cep:number;
+      rua:string;
+      numero:number;
+      bairro:string;
+      cidade:string;
+    }
   }
   
   export interface SortField {

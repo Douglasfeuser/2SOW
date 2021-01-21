@@ -13,61 +13,39 @@ export const UserTableHeader: React.FC<UserTableHeaderProps> = ({
 }) => (
   <Table.Header>
     <Table.Row>
+      
       <Table.HeaderCell
-        width={1}
-        sorted={column === "id" ? direction : undefined}
-        onClick={() => handleSort("id")}
+        width={3}
+        sorted={column === "nome" ? direction : undefined}
+        onClick={() => handleSort("nome")}
       >
-        #
+        Nome
       </Table.HeaderCell>
       <Table.HeaderCell
         width={3}
-        sorted={column === "make" ? direction : undefined}
-        onClick={() => handleSort("make")}
+        sorted={column === "email" ? direction : undefined}
+        onClick={() => handleSort("email")}
       >
-        Make
-      </Table.HeaderCell>
-      <Table.HeaderCell
-        width={3}
-        sorted={column === "model" ? direction : undefined}
-        onClick={() => handleSort("model")}
-      >
-        Model
+        E-mail
       </Table.HeaderCell>
       <Table.HeaderCell
         width={1}
-        sorted={column === "year" ? direction : undefined}
-        onClick={() => handleSort("year")}
+        sorted={column === "cpf" ? direction : undefined}
+        onClick={() => handleSort("cpf")}
       >
-        Year
+        CPF
       </Table.HeaderCell>
       <Table.HeaderCell
         width={1}
-        sorted={column === "package" ? direction : undefined}
-        onClick={() => handleSort("package")}
+        sorted={column === "cidade" ? direction : undefined}
+        onClick={() => handleSort("cidade")}
       >
-        Package
+        Cidade
       </Table.HeaderCell>
       <Table.HeaderCell
         width={1}
-        sorted={column === "fuelType" ? direction : undefined}
-        onClick={() => handleSort("fuelType")}
       >
-        Fuel Type
-      </Table.HeaderCell>
-      <Table.HeaderCell
-        width={1}
-        sorted={column === "transmission" ? direction : undefined}
-        onClick={() => handleSort("transmission")}
-      >
-        Transmission
-      </Table.HeaderCell>
-      <Table.HeaderCell
-        width={1}
-        sorted={column === "favorite" ? direction : undefined}
-        onClick={() => handleSort("favorite")}
-      >
-        Favorite
+        Ações
       </Table.HeaderCell>
     </Table.Row>
   </Table.Header>

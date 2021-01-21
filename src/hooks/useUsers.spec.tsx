@@ -27,7 +27,7 @@ describe("useUsers", () => {
   });
 
   it("fetch mock", async () => {
-    fetchMock.mock("/api/v1/vehicles", mockBaseUsers, {
+    fetchMock.mock("http://localhost:5000/usuarios", mockBaseUsers, {
       query: {
         _limit: 10,
         _page: 1,
@@ -37,7 +37,7 @@ describe("useUsers", () => {
       },
     });
 
-    fetchMock.mock("/api/v1/vehicles", mockBaseUsers, {
+    fetchMock.mock("http://localhost:5000/usuarios", mockBaseUsers, {
       overwriteRoutes: false,
     });
 
@@ -54,7 +54,7 @@ describe("useUsers", () => {
   });
 
   it("with filter", async () => {
-    fetchMock.mock("/api/v1/vehicles", mockBaseUsers, {
+    fetchMock.mock("http://localhost:5000/usuarios", mockBaseUsers, {
       query: {
         _limit: 10,
         _page: 1,
@@ -64,7 +64,7 @@ describe("useUsers", () => {
       },
     });
 
-    fetchMock.mock("/api/v1/vehicles", mockBaseUsers, {
+    fetchMock.mock("http://localhost:5000/usuarios", mockBaseUsers, {
       query: {
         q: "mazda",
       },
@@ -88,7 +88,7 @@ describe("useUsers", () => {
 
   it("handles network failing case", async () => {
     fetchMock.mock(
-      "/api/v1/vehicles",
+      "http://localhost:5000/usuarios",
       {
         status: 404,
         body: {
@@ -107,7 +107,7 @@ describe("useUsers", () => {
     );
 
     fetchMock.mock(
-      "/api/v1/vehicles",
+      "http://localhost:5000/usuarios",
       {
         status: 404,
         body: {
@@ -126,7 +126,7 @@ describe("useUsers", () => {
     await waitFor(() => {
       expect(result.current.data).toEqual({
         totalCount: 0,
-        vehicles: [],
+        users: [],
       });
     });
   });

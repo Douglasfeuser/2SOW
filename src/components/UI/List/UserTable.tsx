@@ -45,7 +45,7 @@ export const UserTable: React.FC<UserTableProps> = ({
   return (
     <React.Fragment>
       <UserPageSizeSelect limit={limit} onChangeLimit={onChangeLimit} />
-      Total count: {totalCount}.
+      Total de registros: {totalCount}.
       <Table celled selectable sortable>
         <UserTableHeader
           column={column}

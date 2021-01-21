@@ -2,28 +2,81 @@
   "usuarios": [
     {
       "id": 1,
-      "nome": "douglas",
-      "cpf": "088.122.840-45",
-      "email": "teste@tmail.com",
+      "nome": "Douglas",
+      "cpf": "088.122.777-45",
+      "email": "t1234@tmail.com",
       "endereco": {
-          "cep": 13454000,
-          "rua": "rua talvez",
-          "numero": 785,
-          "bairro": "bairro azul",
-          "cidade": "cidade eterna"
-      }},
-      {
+        "cep": 13454000,
+        "rua": "rua talvez",
+        "numero": 785,
+        "bairro": "bairro azul",
+        "cidade": "cidade azul"
+      }
+    },
+    {
       "id": 2,
       "nome": "teste",
       "cpf": "088.122.840-45",
       "email": "teste@tmail.com",
       "endereco": {
-          "cep": 13454000,
-          "rua": "rua talvez",
-          "numero": 785,
-          "bairro": "bairro azul",
-          "cidade": "cidade azul"
+        "cep": 13454000,
+        "rua": "rua talvez",
+        "numero": 785,
+        "bairro": "bairro azul",
+        "cidade": "cidade azul"
       }
+    },
+    {
+      "id": 3,
+      "nome": "teste 12345",
+      "cpf": "123.123.840-45",
+      "email": "tes1234@tmail.com",
+      "endereco": {
+        "cep": 13454000,
+        "rua": "rua talvez",
+        "numero": 785,
+        "bairro": "bairro azul",
+        "cidade": "cidade azul"
+      }
+    },
+    {
+      "nome": "Douglas feuser 4",
+      "cpf": "4444",
+      "email": "douglas.feuser@gmail.com",
+      "endereco": {
+        "cep": "88818619",
+        "rua": "Rua Mauro Bonfante",
+        "numero": "4",
+        "bairro": "Rio Maina",
+        "cidade": "Criciúma"
+      },
+      "id": 4
+    },
+    {
+      "nome": "Douglas feuser 55",
+      "cpf": "5555",
+      "email": "douglas.feuser@gmail.com",
+      "endereco": {
+        "cep": "88818619",
+        "rua": "Rua Mauro Bonfante",
+        "bairro": "Rio Maina",
+        "cidade": "Criciúma",
+        "numero": "555"
+      },
+      "id": 5
+    },
+    {
+      "nome": "Douglas feuser",
+      "cpf": "3223453453454",
+      "email": "douglas.feuser@gmail.com",
+      "endereco": {
+        "cep": "88818619",
+        "rua": "Rua Mauro Bonfante",
+        "bairro": "Rio Maina",
+        "cidade": "Criciúma",
+        "numero": "54"
+      },
+      "id": 6
     }
   ]
 }

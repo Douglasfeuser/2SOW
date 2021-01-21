@@ -47,7 +47,7 @@ export const UserFilter: React.FC<UserFilterProps> = ({
   if (!state.filterValid) {
     popupMessage = "Invalid character.";
   } else if (totalCount === 0) {
-    popupMessage = "No results found.";
+    popupMessage = "Sem resultados.";
   }
 
   return (
@@ -57,7 +57,7 @@ export const UserFilter: React.FC<UserFilterProps> = ({
           <Popup
             trigger={
               <Form.Input
-                placeholder={"Enter a filter."}
+                placeholder={"Pesquisa."}
                 name={"filter"}
                 error={!state.filterValid}
                 label={"Filter"}
